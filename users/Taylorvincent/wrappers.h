@@ -9,14 +9,14 @@ expanded before being used as arguments to the LAYOUT_xxx macro.
 #    define LAYOUT KEYMAP
 #endif
 
-// clang-format off
 #define KEYMAP_wrapper(...)                  LAYOUT(__VA_ARGS__)
 #define LAYOUT_wrapper(...)                  LAYOUT(__VA_ARGS__)
-
-// #define LA_NAV_ENT LT(_NAV, KC_ENT)
-// #define LA_NAV_ESC LT(_NAV, KC_ESC)
-// #define LA_SYM_TAB LT(_SYM, KC_TAB)
-// #define LA_SYM_DEL LT(_SYM, KC_DEL)
+/*
+#define LA_NAV_ENT LT(_NAV, KC_ENT)
+#define LA_NAV_ESC LT(_NAV, KC_ESC)
+#define LA_SYM_TAB LT(_SYM, KC_TAB)
+#define LA_SYM_DEL LT(_SYM, KC_DEL)
+*/
 #define LA_NAV  MO(_NAV)
 #define LA_SYM  MO(_SYM)
 #define DF_QWE  DF(_QWERTY)
@@ -28,44 +28,47 @@ NOTE: These are all the same length.  If you do a search/replace
   lengths consistent.
 */
 
+/*
 
-// Todo
+## Todo
 
-// - maybe a media layer for the vol stuff
-// - 'qq' tap dance esc? Or combo something for esc? 'fp' ?
-// - Miryoku, 3 -> 6 layers ? (or 2 -> 4)
-// - Layer tap thumbs
+ - maybe a media layer for the vol stuff
+ - 'qq' tap dance esc? Or combo something for esc? 'fp' ?
+ - Miryoku, 3 -> 6 layers ? (or 2 -> 4)
+ - Layer tap thumbs
 
-// combo shit only works with basic keycodes
-// - combo enter on `.,` or `space L + R` ? Fuck it enter on l thumb
-// - ^^^ maybe Enter on outer thumb. Layertap
+ combo shit only works with basic keycodes
+ - combo enter on `.,` or `space L + R` ? Fuck it enter on l thumb
+ - ^^^ maybe Enter on outer thumb. Layertap
 
-// The 3x6 assholes we need to map:
-// Left to right
-// 6 keys Esc, Tab, Space, Ent ⏎, Bspc, Del)
-
-// Without
-//             ┌───┬───┬───┐ ┌───┬───┬───┐
-//             │   │Bsp│   │ │   │Spc│   │
-//             └───┴───┴───┘ └───┴───┴───┘
-//             ┌───┬───┬───┐ ┌───┬───┬───┐
-//             │   │Del│   │ │   │Tab│   │
-//             └───┴───┴───┘ └───┴───┴───┘
+ The 3x6 assholes we need to map:
+ Left to right
+ 6 keys Esc, Tab, Space, Ent ⏎, Bspc, Del)
 
 
-// all thumbsz idea
-//             ┌───┬───┬───┐ ┌───┬───┬───┐
-//             │Del│Bsp│Ent│ │Tab│Spc│Esc│
-//             └───┴───┴───┘ └───┴───┴───┘
+ Without
+             ┌───┬───┬───┐ ┌───┬───┬───┐
+             │   │Bsp│   │ │   │Spc│   │
+             └───┴───┴───┘ └───┴───┴───┘
+             ┌───┬───┬───┐ ┌───┬───┬───┐
+             │   │Del│   │ │   │Tab│   │
+             └───┴───┴───┘ └───┴───┴───┘
 
-// No adjust idea
-//             ┌───┬───┬───┐ ┌───┬───┬───┐
-//             │   │Bsp│   │ │   │Spc│   │
-//             └───┴───┴───┘ └───┴───┴───┘
 
-//             ┌───┬───┬───┐ ┌───┬───┬───┐
-//             │   │Del│Ent│ │Tab│   │   │
-//             └───┴───┴───┘ └───┴───┴───┘
+ all thumbsz idea
+             ┌───┬───┬───┐ ┌───┬───┬───┐
+             │Del│Bsp│Ent│ │Tab│Spc│Esc│
+             └───┴───┴───┘ └───┴───┴───┘
+
+ No adjust idea
+             ┌───┬───┬───┐ ┌───┬───┬───┐
+             │   │Bsp│   │ │   │Spc│   │
+             └───┴───┴───┘ └───┴───┴───┘
+
+             ┌───┬───┬───┐ ┌───┬───┬───┐
+             │   │Del│Ent│ │Tab│   │   │
+             └───┴───┴───┘ └───┴───┴───┘           
+*/
 
 #define _________THUMB_L_________                         LA_SYM,  KC_BSPC, LA_NAV
 #define _________THUMB_R_________                                                    LA_SYM,  KC_SPC,  LA_NAV
@@ -73,7 +76,7 @@ NOTE: These are all the same length.  If you do a search/replace
 #define _______MOD_THUMB_L_______                         _______, KC_DEL,  KC_ENT
 #define _______MOD_THUMB_R_______                                                    KC_TAB,  KC_ESC, _______
 
-// ``` BASE
+//  BASE
 // ┌───┬───┬───┬───┬───┐         ┌───┬───┬───┬───┬───┐
 // │ Q │ W │ F │ P │ B │         │ J │ L │ U │ Y │ ` │
 // ├───┼───┼───┼───┼───┤         ├───┼───┼───┼───┼───┤
@@ -84,7 +87,7 @@ NOTE: These are all the same length.  If you do a search/replace
 //             ┌───┬───┬───┐ ┌───┬───┬───┐
 //             │   │Bsp│   │ │   │Spc│   │
 //             └───┴───┴───┘ └───┴───┴───┘
-// ```
+// 
 
 
 #define ______________COLEMAK_MOD_DH_L1____________       KC_Q,    KC_W,    KC_F,    KC_P,    KC_B
@@ -95,20 +98,22 @@ NOTE: These are all the same length.  If you do a search/replace
 #define ______________COLEMAK_MOD_DH_R2____________       KC_M,    KC_N,    KC_E,    TD_IJK,  KC_O
 #define ______________COLEMAK_MOD_DH_R3____________       KC_K,    KC_H,    KC_COMM, KC_DOT,  KC_SLASH
 
-// nav = left hand (home row) activator
-// ```
+// NAV = left hand (home row) activator
+// 
 // todo: swapper
 // ┌───┬───┬───┬───┬───┐         ┌───┬───┬───┬───┬───┐
-// │Esc│SAT│AT │Tab│Esc│         │   │   │   │   │   │ // so we can free up "hom" pos here. Maybe for tab, ";" also placeholder here
+// │Esc│SAT│AT │Tab│Esc│         │   │   │   │   │   │ 
 // ├───┼───┼───┼───┼───┤         ├───┼───┼───┼───┼───┤
 // │ADJ│Alt│Sft│Ctl│Win│         │Ent│ ◄ │ ▼ │ ▲ │ ► │
 // ├───┼───┼───┼───┼───┤         ├───┼───┼───┼───┼───┤
 // │^Z │^X │^C │^D │^V │         │   │Hom│Pgd│Pgu│End│
 // └───┴───┴───┴───┴───┘         └───┴───┴───┴───┴───┘
 //
-// │⏯ │<< │ v-│ v+│ >>│
-// │⏯│⏪│🔉│🔊│⏩│
-// ```
+/*
+ │⏯ │<< │ v-│ v+│ >>│
+ │⏯│⏪│🔉│🔊│⏩│
+*/
+// 
 
 #define ________________NAV_L1_3x5_________________       KC_ESC,  SA_TAB,  A_TAB,   KC_TAB,  KC_ESC
 #define ________________NAV_L2_3x5_________________       ____________HOMEROW_OS_MODS_L______________
@@ -118,9 +123,9 @@ NOTE: These are all the same length.  If you do a search/replace
 #define ________________NAV_R2_3x5_________________       KC_ENT, KC_LEFT, KC_DOWN, KC_UP,   KC_RIGHT
 #define ________________NAV_R3_3x5_________________       KC_TAB, KC_HOME, KC_PGDN, KC_PGUP, KC_END
 
-// sym = right hand activator
+// SYM = right hand activator
 
-// ```
+// 
 // LAYOUT_split_3x5_3
 // ┌───┬───┬───┬───┬───┐         ┌───┬───┬───┬───┬───┐
 // │   │ [ │ { │ ( │ + │         │ : │ ) │ } │ ] │ & │
@@ -129,7 +134,7 @@ NOTE: These are all the same length.  If you do a search/replace
 // ├───┼───┼───┼───┼───┤         ├───┼───┼───┼───┼───┤
 // │ ` │ * │ $ │ = │ _ │         │ # │ ! │ < │ > │ ? │
 // └───┴───┴───┴───┴───┘         └───┴───┴───┴───┴───┘
-// ```
+// 
 
 
 #define ________________SYM_L1_3x5_________________       _______, KC_LBRC, KC_LCBR, KC_LPRN, KC_PLUS
@@ -142,7 +147,7 @@ NOTE: These are all the same length.  If you do a search/replace
 
 // raise, number
 
-// ```
+// 
 // ┌───┬───┬───┬───┬───┐         ┌───┬───┬───┬───┬───┐
 // │   │ 4 │ 5 │ 6 │ ^ │         │ | │F4 │F5 │F6 │F11│
 // ├───┼───┼───┼───┼───┤         ├───┼───┼───┼───┼───┤
@@ -150,7 +155,7 @@ NOTE: These are all the same length.  If you do a search/replace
 // ├───┼───┼───┼───┼───┤         ├───┼───┼───┼───┼───┤
 // │ ~ │ 7 │ 8 │ 9 │ % │         │CAP│F7 │F8 │F9 │F12│
 // └───┴───┴───┴───┴───┘         └───┴───┴───┴───┴───┘
-// ```
+// 
 
 #define _______________ADJUST_L1_3x5_______________       _______, KC_4,    KC_5,    KC_6,    KC_CIRC
 #define _______________ADJUST_L2_3x5_______________       KC_0,    KC_1,    KC_2,    KC_3,    KC_0
@@ -161,13 +166,13 @@ NOTE: These are all the same length.  If you do a search/replace
 #define _______________ADJUST_R3_3x5_______________       KC_CAPS, KC_F7,   KC_F8,   KC_F9,   KC_F12
 
 
-// full size stuff
+/* full size stuff */
 #define ________________NUMBER_LEFT________________       KC_1,    KC_2,    KC_3,    KC_4,    KC_5
 #define ________________NUMBER_RIGHT_______________       KC_6,    KC_7,    KC_8,    KC_9,    KC_0
 #define _________________FUNC_LEFT_________________       KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5
 #define _________________FUNC_RIGHT________________       KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10
 
-// helpers
+/* helpers*/
 
 #define ___________________BLANK___________________       _______, _______, _______, _______, _______
 #define _________________MEDIA_3x5_________________       KC_MPLY, KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT
@@ -183,29 +188,27 @@ NOTE: These are all the same length.  If you do a search/replace
 #define _________________QWERTY_R2_________________       KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN
 #define _________________QWERTY_R3_________________       KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLASH
 
+/*
+ Symbol brainstorm:
+ ---------------------------------------------------------------------------------------------------
 
-// clang-format on
+ old
+ esc [ { ( ~       ^ ) } ] `
+ tab - * = _       $
+ + | @ \ %         # & ' : !
 
+ symbol layer: 30 keys - 7 reserved slots = 23 keys available
 
-// Symbol brainstorm:
-// ---------------------------------------------------------------------------------------------------
+ 28 symbols if every symbol needs to be mapped:
+ 5 keys need to be on adjust, bslsh pipe tilde (maybe backtick)
 
-// old
-// esc [ { ( ~      // ^ ) } ] `
-// tab - * = _      // $
-// + | @ \ %        // # & ' : !
+ 24 symbols if not mapping alphas
+ if not mapping <>?: alphas = 1 key on adjust
 
-// symbol layer: 30 keys - 7 reserved slots = 23 keys available
+ ! @ # $ % ^ & * ( ) _ + { } : " | < > ? ~      || shifted 21
+ ` - = \ [ ] '                                  || non shifted 7
 
-// 28 symbols if every symbol needs to be mapped:
-// 5 keys need to be on adjust, bslsh pipe tilde (maybe backtick)
+ todo
 
-// 24 symbols if not mapping alphas
-// if not mapping <>?: alphas = 1 key on adjust
-
-// ! @ # $ % ^ & * ( ) _ + { } : " | < > ? ~      // shifted 21
-// ` - = \ [ ] '                                  // non shifted 7
-
-// todo
-
-// ---------------------------------------------------------------------------------------------------
+ ---------------------------------------------------------------------------------------------------
+*/
