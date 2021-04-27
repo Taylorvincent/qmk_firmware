@@ -102,7 +102,7 @@ NOTE: These are all the same length.  If you do a search/replace
 // 
 // todo: swapper
 // ┌───┬───┬───┬───┬───┐         ┌───┬───┬───┬───┬───┐
-// │Esc│SAT│AT │Tab│Esc│         │   │   │   │   │   │ 
+// │Esc│SAT│AT │Tab│Esc│         │Ply│Prv│V- │V+ │Nxt│ 
 // ├───┼───┼───┼───┼───┤         ├───┼───┼───┼───┼───┤
 // │ADJ│Alt│Sft│Ctl│Win│         │   │ ◄ │ ▼ │ ▲ │ ► │
 // ├───┼───┼───┼───┼───┤         ├───┼───┼───┼───┼───┤
