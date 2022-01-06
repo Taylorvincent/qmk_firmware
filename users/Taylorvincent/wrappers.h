@@ -34,11 +34,13 @@ NOTE: These are all the same length.  If you do a search/replace
         
 */
 
-#define _________THUMB_L_________                         LA_SYM,  KC_BSPC, LA_NAV
+#define _________THUMB_L_________                         LA_SYM,  OS_SHFT, LA_NAV
 #define _________THUMB_R_________                                                    LA_SYM,  KC_SPC,  LA_NAV
 
+/*
 #define _______MOD_THUMB_L_______                         _______, KC_DEL,  KC_ENT
 #define _______MOD_THUMB_R_______                                                    KC_TAB,  KC_ESC, _______
+*/
 
 //  BASE
 // ┌─────┬─────┬─────┬─────┬─────┐       ┌─────┬─────┬─────┬─────┬─────┐
