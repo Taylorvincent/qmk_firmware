@@ -34,7 +34,7 @@ NOTE: These are all the same length.  If you do a search/replace
         
 */
 
-#define _________THUMB_L_________                         LA_SYM,  OS_SHFT, LA_NAV
+#define _________THUMB_L_________                         LA_SYM,  KC_BSPC, LA_NAV
 #define _________THUMB_R_________                                                    LA_SYM,  KC_SPC,  LA_NAV
 
 /*
@@ -73,7 +73,7 @@ NOTE: These are all the same length.  If you do a search/replace
 // ┌─────┬─────┬─────┬─────┬─────┐       ┌─────┬─────┬─────┬─────┬─────┐
 // │     │ SAT │  AT │     │     │       │ Pgu │ Hom │  ▲  │ End │     │
 // ├─────┼─────┼─────┼─────┼─────┤       ├─────┼─────┼─────┼─────┼─────┤
-// │ FUN │ Alt │ Sft │ Ctl │ Gui │       │ Pgd │  ◄  │  ▼  │  ►  │     │
+// │ ADJ │ Alt │ Sft │ Ctl │ Gui │       │ Pgd │  ◄  │  ▼  │  ►  │ XXX │
 // ├─────┼─────┼─────┼─────┼─────┤       ├─────┼─────┼─────┼─────┼─────┤
 // │ ^Z  │ ^X  │ ^C  │ ^D  │ ^V  │       │ Ply │ Prv │ V-  │ V+  │ Nxt │ // movable if needed
 // └─────┴─────┴─────┴─────┴─────┘       └─────┴─────┴─────┴─────┴─────┘
@@ -87,14 +87,14 @@ NOTE: These are all the same length.  If you do a search/replace
 #define ________________NAV_L3_3x5_________________       C(KC_Z), C(KC_X), C(KC_C), C(KC_D), C(KC_V)
 
 #define ________________NAV_R1_3x5_________________       KC_PGUP, KC_HOME, KC_UP,   KC_END,   _______
-#define ________________NAV_R2_3x5_________________       KC_PGDN, KC_LEFT, KC_DOWN, KC_RIGHT, _______   
+#define ________________NAV_R2_3x5_________________       KC_PGDN, KC_LEFT, KC_DOWN, KC_RIGHT, KC_NO   
 #define ________________NAV_R3_3x5_________________       _________________MEDIA_3x5_________________
 
-// SYM = right hand activator
+// SYM = right hand activator 
 // ┌─────┬─────┬─────┬─────┬─────┐       ┌─────┬─────┬─────┬─────┬─────┐
-// │  `  │  {  │  (  │  [  │     │       │  ^  │  |  │  &  │  *  │  ;  │
+// │  `  │  [  │  {  │  (  │     │       │  ^  │  |  │  &  │  *  │  ;  │
 // ├─────┼─────┼─────┼─────┼─────┤       ├─────┼─────┼─────┼─────┼─────┤
-// │  :  │  -  │  +  │  =  │  @  │       │ Gui │ Ctl │ Sft │ Alt │ NUM │
+// │  :  │  -  │  +  │  =  │  @  │       │ Gui │ Ctl │ Sft │ Alt │ ADJ │
 // ├─────┼─────┼─────┼─────┼─────┤       ├─────┼─────┼─────┼─────┼─────┤
 // │  \  │  _  │  '  │  "  │  $  │       │  ~  │  !  │  <  │  >  │  ?  │
 // └─────┴─────┴─────┴─────┴─────┘       └─────┴─────┴─────┴─────┴─────┘
@@ -104,7 +104,7 @@ NOTE: These are all the same length.  If you do a search/replace
 
 
 
-#define ________________SYM_L1_3x5_________________       KC_GRV,  TD_CBR,  TD_PRN,  TD_BRC,  _______
+#define ________________SYM_L1_3x5_________________       KC_GRV,  TD_BRC,  TD_CBR,  TD_PRN,  _______
 #define ________________SYM_L2_3x5_________________       KC_COLN, KC_MINS, KC_PLUS, KC_EQL, KC_AT
 #define ________________SYM_L3_3x5_________________       KC_BSLS, KC_UNDS, KC_QUOT, KC_DQT, KC_DLR
 

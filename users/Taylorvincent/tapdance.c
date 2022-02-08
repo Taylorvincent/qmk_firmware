@@ -22,6 +22,12 @@ void dance_ijk_eachTap(qk_tap_dance_state_t *state, void *user_data) {
     }
 }
 
+
+// void dance_brackets_eachTap(qk_tap_dance_state_t *state, void *user_data) {
+
+//     switch ()
+// }
+
 // All tap dance functions would go here. Only showing this one.
 qk_tap_dance_action_t tap_dance_actions[] = {
     [CT_IJK] = ACTION_TAP_DANCE_FN_ADVANCED(dance_ijk_eachTap, NULL, NULL),

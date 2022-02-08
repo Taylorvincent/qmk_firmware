@@ -3,14 +3,12 @@ COMMAND_ENABLE = no         # Commands for debug and configuration
 MIDI_ENABLE = no            # MIDI controls
 AUDIO_ENABLE = no           # Audio output on port C6
 MOUSEKEY_ENABLE = no
-RGBLIGHT_ENABLE = no
-# RGB_MATRIX_ENABLE = WS2812
-RGB_MATRIX_ENABLE = no
-# RGB_DISABLE_WHEN_USB_SUSPENDED = yes
-RGB_DISABLE_WHEN_USB_SUSPENDED = no
-# OLED_DRIVER_ENABLE = yes
-OLED_DRIVER_ENABLE = no
 EXTRAKEY_ENABLE = yes
+RGBLIGHT_ENABLE = no
+RGB_MATRIX_ENABLE = yes  
+RGB_DISABLE_WHEN_USB_SUSPENDED = yes
+OLED_DRIVER_ENABLE = yes
+OLED_DRIVER = SSD1306
 
 # If you want to change the display of OLED, you need to change here
 SRC +=  ./keyboards/crkbd/keymaps/kidbrazil/logo_reader.c \

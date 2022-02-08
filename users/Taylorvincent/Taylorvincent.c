@@ -58,8 +58,35 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     return true;
 }
 
+# if defined(RGB_MATRIX_ENABLE)
+void rgb_matrix_indicators_kb() {
+    switch(get_highest_layer(layer_state|default_layer_state)) {
+        case _SYM:
+            rgb_matrix_set_color_all(RGB_RED);
+            break;
+        case _NAV:
+            rgb_matrix_set_color_all(RGB_GREEN);
+            break;
+        case _ADJUST:
+            rgb_matrix_set_color_all(RGB_BLUE);
+        default:
+            break;
+    }
+}
+# endif
+
+uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case TD_IJK:
+            return TAPPING_TERM + 50;
+        default:
+            return TAPPING_TERM;
+    }
+}
+
+
 layer_state_t layer_state_set_user(layer_state_t state) {
-    state = update_tri_layer_state(state, _SYM, _NAV, _ADJUST);
+    // state = update_tri_layer_state(state, _SYM, _NAV, _ADJUST);
     # if defined(RGBLIGHT_ENABLE) && defined(RGBLIGHT_LAYERS)
 
     rgblight_set_layer_state(1, layer_state_cmp(state, _NAV));
@@ -76,21 +103,10 @@ layer_state_t default_layer_state_set_user(layer_state_t state) {
     rgblight_set_layer_state(0, layer_state_cmp(state, _COLEMAKDH));
     return state;
 }
-#endif
 
-uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-        case TD_IJK:
-            return TAPPING_TERM + 50;
-        default:
-            return TAPPING_TERM;
-    }
-}
-
-#ifdef RGBLIGHT_LAYERS
-const rgblight_segment_t PROGMEM colemakdh_layer[] = RGBLIGHT_LAYER_SEGMENTS(
-    {0, 70, 6, 250, 250}
-);
+// const rgblight_segment_t PROGMEM colemakdh_layer[] = RGBLIGHT_LAYER_SEGMENTS(
+//     {0, 70, 6, 250, 250}
+// );
 const rgblight_segment_t PROGMEM nav_layer[] = RGBLIGHT_LAYER_SEGMENTS(
     {0, 70, HSV_RED}
 );
@@ -104,7 +120,7 @@ const rgblight_segment_t PROGMEM adj_layer[] = RGBLIGHT_LAYER_SEGMENTS(
 // gold 36, 255, 255
 
 const rgblight_segment_t* const PROGMEM my_rgb_layers[] = RGBLIGHT_LAYERS_LIST(
-    colemakdh_layer,
+    // colemakdh_layer,
     nav_layer,
     sym_layer,    // Overrides caps lock layer
     adj_layer     // Overrides other layers
