@@ -59,18 +59,21 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 }
 
 # if defined(RGB_MATRIX_ENABLE)
-void rgb_matrix_indicators_kb() {
-    switch(get_highest_layer(layer_state|default_layer_state)) {
-        case _SYM:
-            rgb_matrix_set_color_all(RGB_RED);
-            break;
-        case _NAV:
-            rgb_matrix_set_color_all(RGB_GREEN);
-            break;
-        case _ADJUST:
-            rgb_matrix_set_color_all(RGB_BLUE);
-        default:
-            break;
+void rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
+    for (uint8_t i = led_min; i <= led_max; i++) {
+        switch(get_highest_layer(layer_state|default_layer_state)) {
+            case _SYM:
+                rgb_matrix_sethsv_noeeprom(HSV_RED);
+                break;
+            case _NAV:
+                rgb_matrix_sethsv_noeeprom(HSV_GREEN);
+                break;
+            case _ADJUST:
+                rgb_matrix_sethsv_noeeprom(HSV_BLUE);
+                break;
+            default:
+                break;
+        }
     }
 }
 # endif

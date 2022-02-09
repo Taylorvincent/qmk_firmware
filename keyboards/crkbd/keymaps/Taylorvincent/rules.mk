@@ -10,6 +10,8 @@ RGB_DISABLE_WHEN_USB_SUSPENDED = yes
 OLED_DRIVER_ENABLE = yes
 OLED_DRIVER = SSD1306
 
+BOOTLOADER = atmel-dfu
+
 # If you want to change the display of OLED, you need to change here
 SRC +=  ./keyboards/crkbd/keymaps/kidbrazil/logo_reader.c \
         #./lib/rgb_state_reader.c \
